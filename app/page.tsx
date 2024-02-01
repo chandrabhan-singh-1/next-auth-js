@@ -11,7 +11,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import Link from "next/link";
 
 const font = Poppins({
   subsets: ["latin"],
