@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Next Auth v5 - Advanced Authentication Guide (2024)
 
 ![image](https://github.com/chandrabhan-singh-1/shared-assets/blob/main/Images/Next%20Auth%20Thumbnail%20Logo.png)
@@ -93,3 +94,77 @@ Running commands with npm `npm run [command]`
 | command         | description                              |
 | :-------------- | :--------------------------------------- |
 | `dev`           | Starts a development instance of the app |
+=======
+Next Auth v5 - Advanced Authentication Guide (2024)
+
+Thumbnail[https://private-user-images.githubusercontent.com/23248726/293493179-d0175397-8c3f-4e82-91c4-78c14f29bb81.png]
+
+This is a repository for Next Auth v5 - Advanced Authentication Project (2024)
+
+Key Features:
+
+🔐 Next-auth v5 (Auth.js)
+🚀 Next.js 14 with server actions
+🔑 Credentials Provider
+🌐 OAuth Provider (Social login with Google & GitHub)
+🔒 Forgot password functionality
+✉️ Email verification
+📱 Two factor verification
+👥 User roles (Admin & User)
+🔓 Login component (Opens in redirect or modal)
+📝 Register component
+🤔 Forgot password component
+✅ Verification component
+⚠️ Error component
+🔘 Login button
+🚪 Logout button
+🚧 Role Gate
+🔍 Exploring next.js middleware
+📈 Extending & Exploring next-auth session
+🔄 Exploring next-auth callbacks
+👤 useCurrentUser hook
+🛂 useRole hook
+🧑 currentUser utility
+👮 currentRole utility
+🖥️ Example with server component
+💻 Example with client component
+👑 Render content for admins using RoleGate component
+🛡️ Protect API Routes for admins only
+🔐 Protect Server Actions for admins only
+📧 Change email with new verification in Settings page
+🔑 Change password with old password confirmation in Settings page
+🔔 Enable/disable two-factor auth in Settings page
+🔄 Change user role in Settings page (for development purposes only)
+Prerequisites
+Node version 18.7.x
+
+Cloning the repository
+git clone https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide.git
+Install packages
+npm i
+Setup .env file
+DATABASE_URL=
+DIRECT_URL=
+
+AUTH_SECRET=
+
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+RESEND_API_KEY=
+
+NEXT_PUBLIC_APP_URL=
+Setup Prisma
+npx prisma generate
+npx prisma db push
+Start the app
+npm run dev
+Available commands
+Running commands with npm npm run [command]
+
+command	description
+dev	Starts a development instance of the app
+>>>>>>> 5a300007b9ce4dd06921d080746299fd8ffe289a
