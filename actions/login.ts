@@ -13,7 +13,7 @@ import {
 import { sendVerificationEmail, sendTwoFactorTokenEmail } from "@/lib/mail";
 import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
 import { db } from "@/lib/db";
-import { getTwoFactorCofirmationByUserId } from "@/data/two-factor-confirmation";
+import { getTwoFactorConfirmationByUserId } from "@/data/two-factor-confirmation";
 
 export const login = async (
   values: z.infer<typeof LoginSchema>,
@@ -29,7 +29,7 @@ export const login = async (
   const existingUser = await getUserByEmail(email);
 
   if (!existingUser || !existingUser.email || !existingUser.password) {
-    return { error: "Email does not exists!" };
+    return { error: "Email does not exist! Register yourself first!" };
   }
 
   if (!existingUser.emailVerified) {
@@ -68,7 +68,7 @@ export const login = async (
         where: { id: TwoFactorToken.id },
       });
 
-      const existingConfirmation = await getTwoFactorCofirmationByUserId(
+      const existingConfirmation = await getTwoFactorConfirmationByUserId(
         existingUser.id
       );
 
