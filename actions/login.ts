@@ -92,7 +92,6 @@ export const login = async (
     }
   }
 
-  console.log("REACHED Sign IN")
   
   try {
     await signIn("credentials", {
@@ -101,16 +100,17 @@ export const login = async (
       redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
     });
   } catch (error) {
-    console.log("Entered Catch in Login")
+    console.log("Entered Catch in Login Actions!")
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
           return { error: "Invalid Credentials!" };
-        default:
+          default:
+          console.log("Unknown ERROR in Login Action!")
           return { error: "Soemthing went wrong!" };
       }
     }
 
-    throw { error: "Not working!" };
+    // throw { error: "Not working!" };
   }
 };

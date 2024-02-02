@@ -10,7 +10,7 @@ interface LogoutButtonProps {
 export const LogoutButton = ({ children }: LogoutButtonProps) => {
   const onClick = () => {
     logout();
-    redirect('/')
+    // redirect('/auth/login')
   };
 
   return (

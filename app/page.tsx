@@ -31,12 +31,19 @@ export default function Home() {
         >
           🔐Auth
         </h1>
-        <p className="text-white text-lg">A simple authentication service</p>
+        <div>
+          <p className="text-white text-lg">A simple authentication service</p>
+          <p className="text-gray-900 font-medium text-[9px] text-center">
+            (to demonstrate my NextAuth/Auth.js skills)
+          </p>
+        </div>
 
-        <div className="w-[275px] flex justify-between">
+        <div className="w-[275px] flex justify-between relative">
           <HoverCard>
             <HoverCardTrigger asChild>
-              <p className="text-md text-white font-semibold">Modal Mode:</p>
+                <Button variant={"link"} className="absolute left-[-42px] top-[-5px] animate-pulse text-md text-sky-500">
+                  💬
+                </Button>
             </HoverCardTrigger>
             <HoverCardContent
               side="left"
@@ -50,6 +57,9 @@ export default function Home() {
               </p>
             </HoverCardContent>
           </HoverCard>
+          <p className="text-md text-white font-semibold">
+                Modal Mode:
+          </p>
           <Switch
             checked={mode}
             onCheckedChange={() => setMode(!mode)}

@@ -17,6 +17,7 @@ export const {
   pages: {
     signIn: "/auth/login",
     error: "/auth/error",
+    signOut: "/auth/login",
   },
   events: {
     async linkAccount({ user }) {
@@ -31,6 +32,7 @@ export const {
       // Allow OAuth without email verification
       if (account?.provider !== "credentials") return true;
 
+    console.log("Entered SignIN...");
       const existingUser = await getUserById(user.id);
 
       // Prevent sign-in without email verification
@@ -48,7 +50,7 @@ export const {
           where: { id: twoFactorConfirmation.id },
         });
       }
-
+      console.log("Finished SignIN....")
       return true;
     },
     async session({ token, session }) {
