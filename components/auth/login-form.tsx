@@ -19,7 +19,7 @@ import { FormError } from "../form-error";
 import { FormSuccess } from "../form-success";
 import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 export const LoginForm = () => {
@@ -59,6 +59,7 @@ export const LoginForm = () => {
           if (data?.success) {
             form.reset();
             setSuccess(data?.success);
+            redirect("/admin")
           }
 
           if (data?.twoFactor) {

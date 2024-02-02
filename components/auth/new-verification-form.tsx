@@ -7,12 +7,14 @@ import { useCallback, useEffect, useState } from "react";
 import { newVerification } from "@/actions/new-verification";
 import { FormSuccess } from "../form-success";
 import { FormError } from "../form-error";
+import { redirect } from "next/navigation";
 
 export const NewVerificationForm = () => {
   const searchParams = useSearchParams();
   const [error, setError] = useState<string | undefined>();
   const [success, setSuccess] = useState<string | undefined>();
   const newToken = searchParams.get("token");
+
 
   const onSubmit = useCallback(() => {
     console.log(newToken);
@@ -27,7 +29,10 @@ export const NewVerificationForm = () => {
 
     newVerification(newToken)
       .then((data) => {
-        setSuccess(data.success);
+        if(data.success) {
+          setSuccess(data.success);
+          redirect("/")
+        }
         setError(data.error);
       })
       .catch((err) => {

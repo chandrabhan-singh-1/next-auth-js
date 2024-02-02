@@ -29,7 +29,7 @@ export const login = async (
   const existingUser = await getUserByEmail(email);
 
   if (!existingUser || !existingUser.email || !existingUser.password) {
-    return { error: "Email does not exist! Register yourself first!" };
+    return { error: "Email does not exist! Register first!" };
   }
 
   if (!existingUser.emailVerified) {
@@ -92,6 +92,8 @@ export const login = async (
     }
   }
 
+  console.log("REACHED Sign IN")
+  
   try {
     await signIn("credentials", {
       email,
@@ -99,6 +101,7 @@ export const login = async (
       redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
     });
   } catch (error) {
+    console.log("Entered Catch in Login")
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
