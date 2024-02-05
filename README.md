@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Next Auth v5 - Advanced Authentication Guide (2024)
 
-![image](https://github.com/chandrabhan-singh-1/shared-assets/blob/main/Images/Next%20Auth%20Thumbnail%20Logo.png)
+![image](https://github.com/chandrabhan-singh-1/shared-assets/blob/main/Images/authjs/authjs-thumbnail.png)
 
 This is a repository for Next Auth v5 - Advanced Authentication Guide (2024)
 
